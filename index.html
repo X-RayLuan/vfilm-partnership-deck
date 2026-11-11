@@ -41,7 +41,14 @@ td:first-child{color:var(--mut)}
 a{color:var(--acc2)}
 .tag{display:inline-block;border:1px solid var(--acc);color:var(--acc);border-radius:99px;padding:.15em .8em;font-size:clamp(11px,1.2vw,15px)}
 .quote{font-size:clamp(18px,2.4vw,32px);line-height:1.4;border-left:4px solid var(--acc);padding-left:1.4vw;font-weight:600}
+.dl{display:inline-block;border:1px solid var(--acc);color:var(--acc);border-radius:6px;padding:.3em .8em;margin-right:.8em;text-decoration:none;font-size:inherit}
+.dl:hover{background:var(--acc);color:#0d1117}
 @media (max-width:760px){.g2,.g3{grid-template-columns:1fr}.slide{overflow:auto;justify-content:flex-start;padding-top:5vh}}
+@page{size:1920px 1080px;margin:0}
+@media print{html,body{height:auto;overflow:visible;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.deck{position:static}.slide,.slide.on{display:flex;position:relative;inset:auto;width:1920px;height:1080px;break-after:page;page-break-after:always;overflow:hidden;animation:none;background:var(--bg)}
+.slide:last-child{break-after:auto;page-break-after:auto}
+.foot,.bar{display:none}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.slide,.slide.on{overflow:hidden;justify-content:center;padding:6vh 7vw 9vh}}
 </style>
 </head>
 <body>
@@ -49,7 +56,7 @@ a{color:var(--acc2)}
 <main class="deck" id="deck">
 
 <section class="slide">
-  <span class="tag">2027 Annual Strategic Partnership Proposal ｜ 讨论版本 Discussion Draft</span>
+  <span class="tag">2027 Annual Strategic Partnership Proposal</span>
   <h1>VFilm × AI 视频工具平台<small>VFilm × AI Video Tool Platforms</small></h1>
   <p>2027 年度战略合作方案<span class="en">2027 Annual Strategic Partnership Proposal</span></p>
   <p class="quote">Connecting AI Technology, Creators, and the Future of Short-Form Storytelling</p>
@@ -164,8 +171,8 @@ a{color:var(--acc2)}
 </section>
 
 </main>
-<div class="foot"><span>VFilm · 2027 Annual Strategic Partnership Proposal｜讨论版本</span>
-<span class="nav"><span id="ct"></span><button id="pv" aria-label="Previous">←</button><button id="nx" aria-label="Next">→</button><button id="fs" aria-label="Fullscreen">⛶</button></span></div>
+<div class="foot"><span>VFilm · 2027 Annual Strategic Partnership Proposal</span>
+<span class="nav"><a class="dl" href="vfilm-partnership.pdf" download>⬇ 下载 PDF Download PDF</a><span id="ct"></span><button id="pv" aria-label="Previous">←</button><button id="nx" aria-label="Next">→</button><button id="fs" aria-label="Fullscreen">⛶</button></span></div>
 <script>
 const S=[...document.querySelectorAll('.slide')];let i=0;
 function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('on',k===i));
